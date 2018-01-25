@@ -31,6 +31,44 @@ body {
   padding: 50px;
 }
 
+.page-footer {
+  height: $footer-height;
+  background-color: $blue;
+}
+
+.contact {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  color: $white;
+  font-size: $font-big;
+
+  &-input {
+    max-width: 400px;
+    width: 100%;
+    font-size: $font-small;
+    outline: none;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border-width: 0;
+    padding: 8px 10px;
+    outline: 0;
+    -webkit-appearance: none;
+  }
+
+  &-submit {
+    font-size: $font-medium;
+    color: $white;
+    background: none;
+    border: 1px solid $white;
+    border-radius: 2px;
+    padding: 12px 25px;
+  }
+}
+
 .tech-card {
   z-index: 3;
   height: $tech-card-height + 10px;
@@ -52,10 +90,9 @@ body {
   }
 
   &:hover {
-      height: $tech-card-height + 5px;
-      width: $tech-card-width + 5px;
-      margin-right: 25px;
-      margin-bottom: 25px;
+      height: $tech-card-height;
+      width: $tech-card-width;
+      margin: 25px;
   }
 
   &-content {
@@ -108,12 +145,13 @@ body {
     height: $triangle-height;
     flex-flow: row nowrap;
     position: relative;
-    font-size: $font-big;
 
     &-title {
       position: absolute;
       top: 20%;
       left: $triangle-width/2;
+      font-size: $font-big;
+      font-weight: normal;
     }
 
     &::before {
@@ -126,13 +164,13 @@ body {
       height: $triangle-height;
     }
   }
+}
 
-  &-content {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    margin: 60px auto;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-  }
+.dev-content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  margin: 60px auto;
+  flex-flow: row wrap;
+  justify-content: flex-start;
 }
