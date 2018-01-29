@@ -14,13 +14,13 @@ body {
 }
 
 .page-navbar {
+  width: 100%;
   height: $nav-height;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
   box-shadow: 0px 10px 5px $grey;
-  padding: 0 20px;
 }
 
 .page-content {
@@ -46,7 +46,7 @@ body {
   font-size: $font-big;
 
   &-input {
-    max-width: 400px;
+    max-width: 300px;
     width: 100%;
     font-size: $font-small;
     outline: none;
@@ -108,8 +108,13 @@ body {
   }
 }
 
+.logo {
+  margin: 0 20px;
+}
+
 .menu {
   font-size: $font-big;
+  margin: 0 20px;
 }
 
 .dev {
@@ -144,8 +149,12 @@ body {
     margin: 60px auto;
     display: grid;
     justify-content: center;
+    justify-items: center;
     grid-template-columns: repeat(3, max-content);
   }
+
+  
+
 }
 
 .item-a {
@@ -155,4 +164,23 @@ body {
   display: flex;
   align-items: center;
   border-right: 2px solid $green;
+}
+
+@media screen and (max-width: 600px) {
+  .dev-content {
+    grid-template-columns: 100%;
+  }
+
+  .item-a {
+    border-right: 0;
+  }
+
+  .tech-card {
+    border-bottom: 2px solid $green;
+  }
+
+  .menu {
+    display: none;
+  }
+
 }
