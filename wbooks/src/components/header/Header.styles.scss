@@ -1,0 +1,18 @@
+@import '../consts/colors';
+
+.header {
+  height: 90px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 10px 5px $transparentGray;
+  padding: 0 35px;
+  margin-bottom: 70px;
+}
+
+.logo {
+  height: 50px;
+}

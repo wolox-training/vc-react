@@ -1,0 +1,20 @@
+@import '../../consts/sizes';
+
+.menuItem {
+  width: $menuItemWidth;
+  height: $menuItemHeight;
+}
+
+.perfil {
+  border-radius: 50%;
+}
+
+.menu {
+  max-width: $menuItemWidth * 3 + $meneItemMaxDistance * 2;
+  min-width: $menuItemWidth * 3;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
