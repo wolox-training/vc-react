@@ -1,5 +1,62 @@
-.container {
+@import '../../consts/colors.scss';
+
+.bookDataContainer {
   width: 100%;
-  max-width: 1200px;
-  margin: 20px auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.image {
+  flex-shrink: 0;
+  width: 191px;
+  height: 272px;
+}
+
+.dataContainer {
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+  justify-content: space-between;
+  margin-left: 21px;
+}
+
+.title {
+  font-family: 'Roboto-bold', sans-serif;
+  font-size: 20px;
+  color: $black;
+  letter-spacing: 0;
+  line-height: 19px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.author, .year, .genre {
+  font-size: 16px;
+  color: $darkGray;
+  letter-spacing: 0;
+}
+
+.author {
+  margin-bottom: 22px;
+}
+
+.year {
+  margin-bottom: 8px;
+}
+
+.description {
+  font-size: 14px;
+  color: $anotherGray;
+  line-height: 19px;
+  margin-top: 13px;
+}
+
+.button {
+  background: $turquoise;
+  width: 192px;
+  height: 38px;
+  border: 0;
+  font-size: 20px;
+  color: $white;
+  font-family: 'Roboto-bold', sans-serif;
 }

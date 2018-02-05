@@ -1,0 +1,21 @@
+@import './../../consts/colors.scss';
+
+.image {
+  flex-shrink: 0;
+  width: 87px;
+  height: 124px;
+  margin: 0 30px;
+}
+
+.title {
+  font-family: 'Roboto-bold', sans-serif;
+  font-size: 20px;
+  color: $green;
+  line-height: 19px;
+  margin-bottom: 16px;
+}
+
+.suggestionsContainer {
+  display: flex;
+  flex-direction: row;
+}

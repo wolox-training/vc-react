@@ -1,6 +1,11 @@
 @import '../consts/sizes';
 @import '../consts/colors';
 
+.image {
+  width: $bookImageWidth;
+  height: $bookImageHeight;
+}
+
 .bookCard {
   width: $bookImageWidth;
   margin-top: 60px;
@@ -9,7 +14,7 @@
 .title {
   font-size: 14px;
   color: $black;
-  font-weight: bold;
+  font-family: 'Roboto-bold', sans-serif;
   letter-spacing: 0px;
   line-height: 19px;
   margin-top: 10px;

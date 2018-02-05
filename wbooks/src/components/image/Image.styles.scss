@@ -1,9 +1,7 @@
-@import '../../consts/sizes';
-@import '../../consts/colors';
+@import '../consts/sizes';
+@import '../consts/colors';
 
 .image {
-  height: $bookImageHeight;
-  width: $bookImageWidth;
   background: $bookDefaultImageBackground;
   display: flex;
   justify-content: center;
@@ -11,7 +9,6 @@
 }
 
 .defaultImage {
-  height: $bookDefaultImageSize;
   width: $bookDefaultImageSize;
 }
 

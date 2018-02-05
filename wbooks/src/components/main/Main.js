@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 
 import Home from './../home/Home';
 import BookDetail from './../book-detail/BookDetail';
@@ -9,7 +9,8 @@ class Main extends Component {
     return (
       <main>
         <Switch>
-          <Route exact path='/' component={Home}/>
+          <Redirect exact from='/' to='/dashboard'/>
+          <Route exact path='/dashboard' component={Home}/>
           <Route path='/books/:number' component={BookDetail}/>
         </Switch>
       </main>
