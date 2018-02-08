@@ -1,7 +1,8 @@
 const routes = {
   home: () => '/',
   dashboard: () => '/dashboard',
-  detail: (id) => `/detail/${id}`
+  books: (id) => `/books/${id}`,
+  login: () => '/login'
 };
 
 export default routes;

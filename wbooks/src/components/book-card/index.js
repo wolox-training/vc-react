@@ -9,7 +9,7 @@ import propTypes from '../../consts/propTypes';
 class BookCardContainer extends Component {
   render() {
     return (
-      <Link to={routes.detail(this.props.book.id)}>
+      <Link to={routes.books(this.props.book.id)}>
         <div className={styles.bookCard}>
           <ImageContainer image_url={this.props.book.image_url} bookId={this.props.book.id} image_size={styles.image}/>
           <p className={styles.title}> {this.props.book.title} </p>
