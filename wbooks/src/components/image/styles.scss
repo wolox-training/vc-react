@@ -1,0 +1,14 @@
+@import '../../consts/sizes';
+@import '../../consts/colors';
+
+.image {
+  background: $bookDefaultImageBackground;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.defaultImage {
+  width: $bookDefaultImageSize;
+}
+

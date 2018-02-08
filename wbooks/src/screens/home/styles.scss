@@ -1,0 +1,47 @@
+@import '../../consts/sizes';
+@import '../../consts/colors';
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.bookContainer {
+  display: grid;
+  justify-content: space-between;
+  justify-items: center;
+  grid-template-columns: repeat(4, max-content);
+}
+
+.form {
+  display: flex;
+  align-items: center;
+}
+
+.searchButton {
+  background: $green;
+  width: 38px;
+  height: 38px;
+  border: 0;
+}
+
+.input {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  background: $lightGray;
+  width: 238px;
+  height: 38px;
+  border: 0;
+  padding: 0 10px;
+  color:  $gray;
+}
+
+.select {
+  margin-right: 100px;
+}
+
+.option {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
