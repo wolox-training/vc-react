@@ -1,7 +1,3 @@
-const strings = {
-  addComment: 'Agregar comentario',
-  send: 'Enviar',
-  profile: 'profile'
-};
-
-export default strings;
+export const ADD_COMMENT = 'Agregar comentario';
+export const SEND = 'Enviar';
+export const PROFILE = 'profile';

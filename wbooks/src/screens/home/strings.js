@@ -1,8 +1,4 @@
-const strings = {
-  selectFilter: 'Seleccionar filtro',
-  title: 'Título',
-  author: 'Autor',
-  search: 'Buscar...'
-};
-
-export default strings;
+export const SELECT_FILTER = 'Seleccionar filtro';
+export const TITLE = 'Título';
+export const AUTHOR = 'Autor';
+export const SEARCH = 'Buscar...';

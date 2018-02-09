@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import strings from './strings';
+import { GO_BACK } from './strings';
 import styles from './styles.scss';
 import routes from '../../config/routes';
 import propTypes from '../../consts/propTypes';
@@ -14,7 +14,7 @@ class BookDetail extends Component {
   render() {
     return (
       <div>
-        <Link to={routes.home()} className={styles.breadCrumb}> {strings.goBack} </Link>
+        <Link to={routes.home()} className={styles.breadCrumb}> {GO_BACK} </Link>
         <div className={styles.bookDetailContainer}>
           <BookDataContainer book={this.props.book}/>
           <SeparatorContainer />

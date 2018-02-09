@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-import Separator from './layout';
+import styles from './styles.scss';
 
 class SeparatorContainer extends Component {
   render() {
     return (
-      <Separator />
+      <div className={styles.separator} />
     );
   }
 }

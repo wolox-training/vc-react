@@ -1,5 +1,1 @@
-const strings = {
-  goBack: '<Volver'
-};
-
-export default strings;
+export const GO_BACK = '<Volver';

@@ -1,5 +1,1 @@
-const strings = {
-  comments: 'Comentarios'
-}
-
-export default strings;
+export const COMMENTS = 'Comentarios';

@@ -4,19 +4,11 @@ import Home from './layout';
 import BooksData  from '../../data/books.json';
 
 class HomeContainer extends Component {
-  constructor() {
-    super();
-    this.data = '';
-    this.type = '';
-    this.state = {
-      items: []
-    }
-  }
+  state = { items: BooksData };
 
   componentWillMount() {
-    this.setState({
-      items: BooksData
-    })
+    this.data = '';
+    this.type = '';
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -55,7 +47,7 @@ class HomeContainer extends Component {
 
   render() {
     return (
-      <Home 
+      <Home
         items={this.state.items}
         handleSubmit={this.handleSubmit}
         handleDataChange={this.handleDataChange.bind(this)}

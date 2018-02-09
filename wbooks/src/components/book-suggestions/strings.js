@@ -1,5 +1,1 @@
-const strings = {
-  suggestions: 'Sugerencias'
-};
-
-export default strings;
+export const SUGGESTIONS = 'Sugerencias';

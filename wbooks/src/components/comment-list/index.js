@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 
-import CommentList from './layout';
+import styles from './styles.scss';
+import CommentContainer from '../comment/index';
 
 class CommentListContainer extends Component {
   render() {
     return (
-      <CommentList />
+      <div className={styles.container}>
+        <CommentContainer />
+        <CommentContainer />
+      </div>
     );
   }
 }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import strings from './strings';
+import { SELECT_FILTER, TITLE, AUTHOR, SEARCH } from './strings';
 import styles from './styles.scss';
 import propTypes from '../../consts/propTypes';
 import BookCardContainer from '../../components/book-card/index';
@@ -14,11 +14,11 @@ class Home extends Component {
       <div className={styles.container}>
         <div className={styles.form}>
           <select name='type' className={classNames({[styles.select]: true, [styles.input]: true})} onChange={this.props.handleTypeChange}>
-            <option className={styles.option} value='' default>{strings.selectFilter}</option>
-            <option className={styles.option} key='title' value='title'>{strings.title}</option>
-            <option className={styles.option} value='author'>{strings.author}</option>
+            <option className={styles.option} value='' default>{SELECT_FILTER}</option>
+            <option className={styles.option} key='title' value='title'>{TITLE}</option>
+            <option className={styles.option} value='author'>{AUTHOR}</option>
           </select>
-          <input name='data' className={classNames({[styles.option]: true, [styles.input]: true})} onChange={this.props.handleDataChange} placeholder={strings.search}></input>
+          <input name='data' className={classNames({[styles.option]: true, [styles.input]: true})} onChange={this.props.handleDataChange} placeholder={SEARCH}></input>
           <button className={styles.searchButton} onClick={this.props.handleSubmit}>
             <img src={SearchImage} alt='search' />
           </button>
