@@ -2,20 +2,22 @@ import React, { Component } from 'react';
 
 import Home from './layout';
 import BooksData  from '../../data/books.json';
+import { connect } from 'react-redux';
+import { itemsFetchData } from '../../actions/items';
 
 class HomeContainer extends Component {
   state = { items: BooksData };
 
-  componentWillMount() {
+  componentWillMount = () => {
     this.data = '';
     this.type = '';
-    this.handleSubmit = this.handleSubmit.bind(this);
+    itemsFetchData('https://wbooks-api-stage.herokuapp.com/api/v1/books');
   }
 
-  handleSubmit(e) {
+  handleSubmit = (e) => {
     const data = this.data;
     const type = this.type;
-    let newItems = BooksData;
+    let newItems = this.props.items;
 
     if (data && data.length > 0) {
       newItems = []
@@ -27,7 +29,7 @@ class HomeContainer extends Component {
       }
       properties.forEach(property => {
         newItems = newItems.concat(
-          BooksData.filter(item => !newItems.includes(item) && item[property].includes(data.toLowerCase()))
+          this.props.items.filter(item => !newItems.includes(item) && item[property].includes(data.toLowerCase()))
         );
       })
     }
@@ -37,11 +39,11 @@ class HomeContainer extends Component {
     });
   }
 
-  handleDataChange(e) {
+  handleDataChange = (e) => {
     this.data = e.target.value;
   }
 
-  handleTypeChange(e) {
+  handleTypeChange = (e) => {
     this.type = e.target.value;
   }
 
@@ -50,11 +52,25 @@ class HomeContainer extends Component {
       <Home
         items={this.state.items}
         handleSubmit={this.handleSubmit}
-        handleDataChange={this.handleDataChange.bind(this)}
-        handleTypeChange={this.handleTypeChange.bind(this)}
+        handleDataChange={this.handleDataChange}
+        handleTypeChange={this.handleTypeChange}
       />
     );
   }
 }
 
-export default HomeContainer;
+const mapStateToProps = (state) => {
+  return {
+      items: state.items,
+      hasErrored: state.itemsHasErrored,
+      isLoading: state.itemsIsLoading
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+      fetchData: (url) => dispatch(itemsFetchData(url))
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);

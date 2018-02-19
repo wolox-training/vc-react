@@ -35,6 +35,7 @@ class LoginContainer extends Component {
           .then((response) => {
             console.log(response.status);
             this.login(response.data.access_token, response.data.renew_id);
+            axios.defaults.headers.common['Authorization'] = response.data.access_token;
           })
           .catch((error) => {
             if (error.response) {

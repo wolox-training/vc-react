@@ -12,6 +12,9 @@ const fakeAuth = {
     localStorage.removeItem('WBooksApp_access_token');
     localStorage.removeItem('WBooksApp_renew_id');
     setTimeout(cb, 100) // fake async
+  },
+  getAccessToken() {
+    return localStorage.getItem('WBooksApp_access_token');
   }
 }
 
