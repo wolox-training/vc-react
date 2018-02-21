@@ -1,6 +1,6 @@
 const routes = {
-  home: () => '/',
-  dashboard: () => '/dashboard',
+  home: () => '/dashboard',
+  dashboard: () => '/',
   books: (id) => `/books/${id}`,
   login: () => '/login'
 };

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { DESCRIPTION, RENT } from './strings';
 import styles from './styles.scss';
 import ImageContainer from '../image/index';
-import propTypes from '../../consts/propTypes';
+import { BookPropType } from '../../consts/propTypes';
 
 class BookDataContainer extends Component {
   render() {
@@ -28,7 +28,7 @@ class BookDataContainer extends Component {
 }
 
 BookDataContainer.propType = {
-  book: propTypes.book.isRequired
+  book: BookPropType.isRequired
 };
 
 export default BookDataContainer;

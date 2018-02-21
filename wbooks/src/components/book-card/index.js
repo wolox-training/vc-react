@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import styles from './styles.scss';
 import ImageContainer from '../image/index';
 import routes from '../../config/routes'
-import propTypes from '../../consts/propTypes';
+import { BookPropType } from '../../consts/propTypes';
 
 class BookCardContainer extends Component {
   render() {
@@ -21,7 +21,7 @@ class BookCardContainer extends Component {
 }
 
 BookCardContainer.propTypes = {
-  book: propTypes.book.isRequired
+  book: BookPropType.isRequired
 };
 
 export default BookCardContainer;

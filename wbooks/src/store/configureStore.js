@@ -1,11 +1,15 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import rootReducer from '../reducers';
+import { combineReducers } from 'redux';
+import { reducer as books } from '../redux/books/reducer';
 
-export default function configureStore(initialState) {
+const reducers = combineReducers({
+  books
+});
+
+export default function configureStore() {
     return createStore(
-        rootReducer,
-        initialState,
+        reducers,
         applyMiddleware(thunk)
     );
 }

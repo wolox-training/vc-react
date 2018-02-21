@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 import { GO_BACK } from './strings';
 import styles from './styles.scss';
 import routes from '../../config/routes';
-import propTypes from '../../consts/propTypes';
-import HeaderContainer from '../../components/header/index';
+import { BookPropType } from '../../consts/propTypes';
 import BookDataContainer from '../../components/book-data/index';
 import BookSuggestionsContainer from '../../components/book-suggestions/index';
 import SeparatorContainer from '../../components/separator/index';
@@ -15,7 +14,6 @@ class BookDetail extends Component {
   render() {
     return (
       <div>
-        <HeaderContainer />
         <Link to={routes.home()} className={styles.breadCrumb}> {GO_BACK} </Link>
         <div className={styles.bookDetailContainer}>
           <BookDataContainer book={this.props.book}/>
@@ -30,7 +28,7 @@ class BookDetail extends Component {
 }
 
 BookDetail.propTypes = {
-  book: propTypes.book.isRequired
+  book: BookPropType.isRequired
 };
 
 export default BookDetail;

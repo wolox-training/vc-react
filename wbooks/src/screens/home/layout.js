@@ -4,16 +4,14 @@ import classNames from 'classnames';
 
 import { SELECT_FILTER, TITLE, AUTHOR, SEARCH } from './strings';
 import styles from './styles.scss';
-import propTypes from '../../consts/propTypes';
+import { BookPropType } from '../../consts/propTypes';
 import BookCardContainer from '../../components/book-card/index';
-import HeaderContainer from '../../components/header/index';
 import SearchImage from '../../images/search.svg';
 
 class Home extends Component {
   render() {
     return (
       <div>
-        <HeaderContainer />
         <div className={styles.container}>
           <div className={styles.form}>
             <select name='type' className={classNames({[styles.select]: true, [styles.input]: true})} onChange={this.props.handleTypeChange}>
@@ -36,7 +34,7 @@ class Home extends Component {
 }
 
 Home.propTypes = {
-  items: PropTypes.arrayOf( propTypes.book ).isRequired,
+  items: PropTypes.arrayOf( BookPropType ).isRequired,
   handleDataChange: PropTypes.func.isRequired,
   handleTypeChange: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired
