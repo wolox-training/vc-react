@@ -22,13 +22,13 @@ const initialState = {
 }
 
 
-export function reducer(state = Immutable(initialState), action) {
+export const reducer = (state = Immutable(initialState), action) => {
   switch(action.type) {
     case actions.GET_BOOK: {
       return state.merge({ loading: true });
     }
     case actions.GET_BOOK_SUCCESS: {
-      return state.merge({ loading: false, student: action.payload.book });
+      return state.merge({ loading: false, book: action.payload.book });
     }
     case actions.GET_BOOK_ERROR: {
       return state.merge({ loading: false });
@@ -37,12 +37,13 @@ export function reducer(state = Immutable(initialState), action) {
       return state.merge({ loading: true });
     }
     case actions.GET_BOOKS_SUCCESS: {
-      return state.merge({ loading: false, students: action.payload.books });
+      return state.merge({ loading: false, books: action.payload.books });
     }
     case actions.GET_BOOKS_ERROR: {
       return state.merge({ loading: false });
     }
     case action.CHANGE_FILTERS: {
+      console.log(action.payload.filters);
       return state.merge({ loading: false, filters: action.payload.filters });
     }
     default: {

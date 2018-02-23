@@ -15,7 +15,9 @@ class HomeContainer extends Component {
   }
 
   handleSubmit = (e) => {
-    this.props.dispatch(actionCreators.changeFilters({filterType: this.data, filterData: this.data}));
+    console.log(this.type);
+    console.log(this.data);
+    this.props.dispatch(actionCreators.changeFilters({filterType: this.type, filterData: this.data}));
   }
 
   handleDataChange = (e) => {
@@ -23,6 +25,7 @@ class HomeContainer extends Component {
   }
 
   handleTypeChange = (e) => {
+    console.log('PUSSSSS');
     this.type = e.target.value;
   }
 
@@ -40,7 +43,7 @@ class HomeContainer extends Component {
       }
       properties.forEach(property => {
         newItems = newItems.concat(
-          this.props.items.filter(item => !newItems.includes(item) && item[property].includes(data.toLowerCase()))
+          this.props.books.filter(item => !newItems.includes(item) && item[property].includes(data.toLowerCase()))
         );
       })
     }
@@ -50,7 +53,7 @@ class HomeContainer extends Component {
   render() {
     return (
       <Home
-        items={this.filterItems(this.props.items)}
+        items={this.filterItems(this.props.books)}
         handleSubmit={this.handleSubmit}
         handleDataChange={this.handleDataChange}
         handleTypeChange={this.handleTypeChange}
@@ -60,9 +63,11 @@ class HomeContainer extends Component {
 }
 
 const mapStateToProps = (state) => {
+
+  console.log(state.books.filters);
   return {
-      items: state.items,
-      filters: state.filters
+      books: state.books.books,
+      filters: state.books.filters
   };
 };
 

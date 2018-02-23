@@ -28,7 +28,7 @@ export const actionCreators = {
   getBooks() {
     return async dispatch => {
       dispatch({ type: actions.GET_BOOKS });
-      BooksService.getStudents()
+      BooksService.getBooks()
         .then(response => {
           dispatch({ type: actions.GET_BOOKS_SUCCESS, payload: { books: response.data } });
         })
