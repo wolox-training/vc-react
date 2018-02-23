@@ -1,32 +1,26 @@
 import React, { Component } from 'react';
 
 import Home from './layout';
-import BooksData  from '../../data/books.json';
 import { connect } from 'react-redux';
 import { actionCreators } from '../../redux/books/actions';
 
 class HomeContainer extends Component {
-  state = { items: BooksData };
+  state = { data: '', type: '' };
 
-  componentWillMount = () => {
-    this.data = '';
-    this.type = '';
+  componentDidMount = () => {
     this.props.dispatch(actionCreators.getBooks());
   }
 
   handleSubmit = (e) => {
-    console.log(this.type);
-    console.log(this.data);
-    this.props.dispatch(actionCreators.changeFilters({filterType: this.type, filterData: this.data}));
+    this.props.dispatch(actionCreators.changeFilters({filterType: this.state.type, filterData: this.state.data}));
   }
 
   handleDataChange = (e) => {
-    this.data = e.target.value;
+    this.setState({data: e.target.value});
   }
 
   handleTypeChange = (e) => {
-    console.log('PUSSSSS');
-    this.type = e.target.value;
+    this.setState({type: e.target.value});
   }
 
   filterItems = (items) => {
@@ -63,8 +57,6 @@ class HomeContainer extends Component {
 }
 
 const mapStateToProps = (state) => {
-
-  console.log(state.books.filters);
   return {
       books: state.books.books,
       filters: state.books.filters

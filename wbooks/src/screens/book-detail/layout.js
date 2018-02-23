@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import { GO_BACK } from './strings';
 import styles from './styles.scss';
 import routes from '../../config/routes';
-import { BookPropType } from '../../consts/propTypes';
 import BookDataContainer from '../../components/book-data/index';
 import BookSuggestionsContainer from '../../components/book-suggestions/index';
 import SeparatorContainer from '../../components/separator/index';
@@ -28,7 +28,16 @@ class BookDetail extends Component {
 }
 
 BookDetail.propTypes = {
-  book: BookPropType.isRequired
+  book: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    author: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    genre: PropTypes.string.isRequired,
+    publisher: PropTypes.string.isRequired,
+    year: PropTypes.string.isRequired,
+    image_url: PropTypes.string,
+    actual_rent: PropTypes.number
+  }).isRequired
 };
 
 export default BookDetail;

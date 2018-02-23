@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-import { EMAIL, PASSWORD, CONFIRM_PASSWORD, NAME, LAST_NAME, SIGNUP } from './strings';
+import { EMAIL, PASSWORD, CONFIRM_PASSWORD, NAME, LAST_NAME, SIGNUP, LOGIN } from './strings';
 import styles from './styles.scss';
 import wlogo from '../../images/wbooks_logo.svg';
+import routes from '../../config/routes';
 
 class Signup extends Component {
   render() {
@@ -75,6 +77,7 @@ class Signup extends Component {
           </div>
           <button className={styles.button}>{SIGNUP}</button>
         </form>
+        <Link to={routes.login()} className={styles.textLink}> {LOGIN} </Link>
       </div>
     );
   }

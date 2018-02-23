@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { DESCRIPTION, RENT } from './strings';
 import styles from './styles.scss';
 import ImageContainer from '../image/index';
-import { BookPropType } from '../../consts/propTypes';
 
 class BookDataContainer extends Component {
   render() {
@@ -28,7 +28,15 @@ class BookDataContainer extends Component {
 }
 
 BookDataContainer.propType = {
-  book: BookPropType.isRequired
+  book: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    author: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    genre: PropTypes.string.isRequired,
+    publisher: PropTypes.string.isRequired,
+    year: PropTypes.string.isRequired,
+    image_url: PropTypes.string
+  }).isRequired
 };
 
 export default BookDataContainer;

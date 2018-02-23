@@ -104,5 +104,8 @@
     "extends": "react-app"
   },
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "redux-devtools-extension": "^2.13.2"
+  }
 }

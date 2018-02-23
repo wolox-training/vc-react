@@ -1,23 +1,29 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { actionCreators } from '../../redux/books/actions';
 
 import BookDetail from './layout';
-import Books from '../../data/books.json';
 
 class BookDetailContainer extends Component {
-  componentWillMount() {
-    const id = this.props.match.params.number;
-    const item = Books.find(book => book.id.toString() === id);
-
-    this.setState({
-      item: item
-    })
+  componentDidMount() {
+    this.props.dispatch(actionCreators.getBook(this.props.match.params.number));
   }
 
   render() {
+    if (this.props.loading) {
+      return null;
+    }
     return (
-      <BookDetail book={this.state.item} />
+      <BookDetail book={this.props.book} />
     );
   }
 }
 
-export default BookDetailContainer;
+const mapStateToProps = (state) => {
+  return {
+    loading: state.books.loading,
+    book: state.books.book
+  };
+}
+
+export default connect(mapStateToProps)(BookDetailContainer);

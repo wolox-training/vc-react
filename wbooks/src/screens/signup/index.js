@@ -38,9 +38,7 @@ class SignupContainer extends Component {
 
   validateForm = (callback) => {
     const email = this.state.email && this.state.email.length > 0 ? (validateEmail(this.state.email) ? '' : EMAIL_ERROR) : REQUIRED_ERROR;
-    console.log(email);
     const password = this.state.password && this.state.email.length > 0 ? (validatePassword(this.state.password) ? '' : PASSWORD_ERROR) : REQUIRED_ERROR;
-    console.log(password);
     const confirm_password = this.state.confirm_password && this.state.confirm_password.length > 0 ? (this.state.confirm_password !== this.state.password ? NOT_MATCHING_PASSWORDS_ERROR : '') : REQUIRED_ERROR;
     const first_name = this.state.first_name && this.state.first_name.length > 0 ? (validateOnlyLetters(this.state.first_name) ? '': ONLY_LETTERS_ERROR) : REQUIRED_ERROR;
     const last_name = this.state.last_name && this.state.last_name.length > 0 ? (validateOnlyLetters(this.state.last_name) ? '' : ONLY_LETTERS_ERROR) : REQUIRED_ERROR;;
@@ -70,8 +68,6 @@ class SignupContainer extends Component {
         <Redirect to={from}/>
       )
     }
-
-    console.log(this.state.formErrors);
 
     return (
       <div>

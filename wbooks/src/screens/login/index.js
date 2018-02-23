@@ -23,7 +23,7 @@ class LoginContainer extends Component {
     this.validateForm(
       () => {
         if (this.isValidForm()) {
-          this.props.dispatch(actionCreators.login({email: this.state.email, password: this.state.password}));
+          this.props.dispatch(actionCreators.login(this.state.email, this.state.password));
         }
       }
     )
@@ -31,9 +31,7 @@ class LoginContainer extends Component {
 
   validateForm = (callback) => {
     const email = this.state.email && this.state.email.length > 0 ? (validateEmail(this.state.email) ? '' : EMAIL_ERROR) : REQUIRED_ERROR;
-    console.log(email);
     const password = this.state.password && this.state.email.length > 0 ? (validatePassword(this.state.password) ? '' : PASSWORD_ERROR) : REQUIRED_ERROR;
-    console.log(password);
     this.setState({ formErrors: {email, password} }, callback);
   }
 

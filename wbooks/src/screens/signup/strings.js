@@ -1,4 +1,5 @@
 export const SIGNUP = 'Registrarse';
+export const LOGIN = '¿Ya tenés una cuenta? ¡Ingresá!';
 export const EMAIL = 'Email';
 export const PASSWORD = 'Contraseña';
 export const CONFIRM_PASSWORD = 'Confirmar contraseña';

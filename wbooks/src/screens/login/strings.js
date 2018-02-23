@@ -1,4 +1,5 @@
 export const LOGIN = 'Ingresar';
+export const SIGNUP = '¿No tenés cuenta? ¡Registrate!';
 export const EMAIL = 'Email';
 export const PASSWORD = 'Contraseña';
 

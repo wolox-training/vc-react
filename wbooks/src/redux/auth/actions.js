@@ -1,59 +1,64 @@
-import { stringArrayToObject } from '../../utils/ReduxUtils';
 import AuthService from '../../services/AuthService';
 import StorageAuth from '../../utils/StorageAuth';
 
-export const actions = stringArrayToObject([
-  'LOGIN',
-  'LOGIN_SUCCESS',
-  'LOGIN_ERROR',
-  'SIGNUP',
-  'SIGNUP_SUCCESS',
-  'SIGNUP_ERROR',
-  'LOGOUT'
-]);
+export const LOGIN = 'LOGIN';
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+export const LOGIN_ERROR = 'LOGIN_ERROR';
+export const SIGNUP = 'SIGNUP';
+export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS';
+export const SIGNUP_ERROR = 'SIGNUP_ERROR';
+export const LOGOUT = 'LOGOUT';
 
 export const actionCreators =  {
   login(email, password) {
     return async dispatch => {
-      dispatch({ type: actions.LOGIN });
+      dispatch({ type: LOGIN });
       AuthService.login(email, password)
         .then(response => {
+          if(!response.ok) {
+            dispatch({ type: LOGIN_ERROR });
+            return;
+          }
           AuthService.setAuthHeader(response.data.access_token);
           StorageAuth.authenticate(response.data.access_token, response.data.renew_id);
           dispatch(
             {
-              type: actions.LOGIN_SUCCESS, 
+              type: LOGIN_SUCCESS, 
               payload: { access_token: response.data.access_token, renew_id: response.data.renew_id }
             }
           );
         })
         .catch(() => {
-          dispatch({ type: actions.LOGIN_ERROR });
+          dispatch({ type: LOGIN_ERROR });
         });
     };
   },
   signup(email, password, confirmPassword, firstName, lastName) {
     return async dispatch => {
-      dispatch({ type: actions.SIGNUP });
+      dispatch({ type: SIGNUP });
       AuthService.signup(email, password, confirmPassword, firstName, lastName)
         .then(response => {
+          if(!response.ok) {
+            dispatch({ type: LOGIN_ERROR });
+            return;
+          }
           AuthService.setAuthHeader(response.data.access_token);
           StorageAuth.authenticate(response.data.access_token, response.data.renew_id);
           dispatch(
             {
-              type: actions.SIGNUP_SUCCESS, 
+              type: SIGNUP_SUCCESS, 
               payload: { access_token: response.data.access_token, renew_id: response.data.renew_id }
             }
           );
         })
         .catch(() => {
-          dispatch({ type: actions.SIGNUP_ERROR });
+          dispatch({ type: SIGNUP_ERROR });
         });
     };
   },
   logout() {
     return async dispatch => {
-      dispatch({ type: actions.LOGOUT });
+      dispatch({ type: LOGOUT });
       StorageAuth.logout();
     };
   }

@@ -4,7 +4,6 @@ import classNames from 'classnames';
 
 import { SELECT_FILTER, TITLE, AUTHOR, SEARCH } from './strings';
 import styles from './styles.scss';
-import { BookPropType } from '../../consts/propTypes';
 import BookCardContainer from '../../components/book-card/index';
 import SearchImage from '../../images/search.svg';
 
@@ -33,8 +32,18 @@ class Home extends Component {
   }
 }
 
+const bookShape = PropTypes.shape({
+  id: PropTypes.number.isRequired,
+  author: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  genre: PropTypes.string.isRequired,
+  publisher: PropTypes.string.isRequired,
+  year: PropTypes.string.isRequired,
+  image_url: PropTypes.string
+});
+
 Home.propTypes = {
-  items: PropTypes.arrayOf( BookPropType ).isRequired,
+  items: PropTypes.arrayOf( bookShape ).isRequired,
   handleDataChange: PropTypes.func.isRequired,
   handleTypeChange: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired

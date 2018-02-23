@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 
 import DashboardContainer from './screens/dashboard/index';
 import LoginContainer from './screens/login/index';
@@ -12,8 +12,8 @@ class App extends Component {
     return (
       <Fragment>
         <Switch>
-          <Route exact path={routes.login()} component={LoginContainer} isPublic/>
-          <Route exact path={routes.signup()} component={SignupContainer} isPublic/>
+          <Authenticated exact path={routes.login()} component={LoginContainer} isPublic/>
+          <Authenticated exact path={routes.signup()} component={SignupContainer} isPublic/>
           <Authenticated path={routes.dashboard()} component={DashboardContainer} isPrivate/>
         </Switch>
       </Fragment>

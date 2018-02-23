@@ -1,10 +1,10 @@
 import React, { Component, } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import styles from './styles.scss';
 import ImageContainer from '../image/index';
-import routes from '../../config/routes'
-import { BookPropType } from '../../consts/propTypes';
+import routes from '../../config/routes';
 
 class BookCardContainer extends Component {
   render() {
@@ -21,7 +21,15 @@ class BookCardContainer extends Component {
 }
 
 BookCardContainer.propTypes = {
-  book: BookPropType.isRequired
+  book: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    author: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    genre: PropTypes.string.isRequired,
+    publisher: PropTypes.string.isRequired,
+    year: PropTypes.string.isRequired,
+    image_url: PropTypes.string
+  }).isRequired
 };
 
 export default BookCardContainer;

@@ -1,8 +1,7 @@
 import Immutable from 'seamless-immutable';
 import PropTypes from 'prop-types';
 
-import { actions } from './actions';
-import { BookPropType } from '../../consts/propTypes';
+import { GET_BOOK, GET_BOOK_SUCCESS, GET_BOOK_ERROR, GET_BOOKS, GET_BOOKS_SUCCESS, GET_BOOKS_ERROR, CHANGE_FILTERS } from './actions';
 
 const initialState = {
     loading: false,
@@ -12,7 +11,7 @@ const initialState = {
       filterData: ''
     },
     book: {
-      id: '',
+      id: 0,
       author: '',
       title: '',
       genre: '',
@@ -21,29 +20,27 @@ const initialState = {
     }
 }
 
-
 export const reducer = (state = Immutable(initialState), action) => {
   switch(action.type) {
-    case actions.GET_BOOK: {
+    case GET_BOOK: {
       return state.merge({ loading: true });
     }
-    case actions.GET_BOOK_SUCCESS: {
+    case GET_BOOK_SUCCESS: {
       return state.merge({ loading: false, book: action.payload.book });
     }
-    case actions.GET_BOOK_ERROR: {
+    case GET_BOOK_ERROR: {
       return state.merge({ loading: false });
     }
-    case actions.GET_BOOKS: {
+    case GET_BOOKS: {
       return state.merge({ loading: true });
     }
-    case actions.GET_BOOKS_SUCCESS: {
+    case GET_BOOKS_SUCCESS: {
       return state.merge({ loading: false, books: action.payload.books });
     }
-    case actions.GET_BOOKS_ERROR: {
+    case GET_BOOKS_ERROR: {
       return state.merge({ loading: false });
     }
-    case action.CHANGE_FILTERS: {
-      console.log(action.payload.filters);
+    case CHANGE_FILTERS: {
       return state.merge({ loading: false, filters: action.payload.filters });
     }
     default: {
@@ -52,7 +49,15 @@ export const reducer = (state = Immutable(initialState), action) => {
   }
 }
 
-const book = BookPropType;
+const book = PropTypes.shape({
+  id: PropTypes.number.isRequired,
+  author: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  genre: PropTypes.string.isRequired,
+  publisher: PropTypes.string.isRequired,
+  year: PropTypes.string.isRequired,
+  image_url: PropTypes.string
+});
 
 export const propTypes = {
   book,
