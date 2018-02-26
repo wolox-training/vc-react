@@ -2,8 +2,8 @@ import React, { Component, Fragment } from 'react';
 
 import { COMMENTS } from './strings';
 import styles from './styles.scss';
-import AddCommentContainer from '../addComment/index';
-import CommentListContainer from '../commentList/index';
+import AddCommentContainer from '../AddComment';
+import CommentListContainer from '../CommentList';
 
 class BookComments extends Component {
   render() {

@@ -6,16 +6,15 @@ import { REQUIRED_ERROR, EMAIL_ERROR, PASSWORD_ERROR, NOT_MATCHING_PASSWORDS_ERR
 import { validateEmail, validatePassword, validateOnlyLetters } from '../../utils/Validator';
 import { connect } from 'react-redux';
 import { actionCreators } from '../../redux/auth/actions';
+import routes from '../../config/routes';
 
 class SignupContainer extends Component {
   state = {
-    formErrors: {email: '', password: '', confirm_password: '', first_name: '', last_name:''}
+    formErrors: {email: '', password: '', confirmPassword: '', firstName: '', lastName:''}
   }
 
   handleChange = (e) => {
-    var change = {}
-    change[e.target.name] = e.target.value
-    this.setState(change)
+    this.setState({ [e.target.name]: e.target.value });
   }
 
   handleSubmit = (e) => {
@@ -26,9 +25,9 @@ class SignupContainer extends Component {
           this.props.dispatch(actionCreators.signup({
             email: this.state.email,
             password: this.state.password,
-            confirm_password: this.state.confirm_password,
-            first_name: this.state.first_name,
-            last_name: this.state.last_name,
+            confirm_password: this.state.confirmPassword,
+            first_name: this.state.firstName,
+            last_name: this.state.lastName,
             locale: 'en' 
           }));
         }
@@ -39,29 +38,26 @@ class SignupContainer extends Component {
   validateForm = (callback) => {
     const email = this.state.email && this.state.email.length > 0 ? (validateEmail(this.state.email) ? '' : EMAIL_ERROR) : REQUIRED_ERROR;
     const password = this.state.password && this.state.email.length > 0 ? (validatePassword(this.state.password) ? '' : PASSWORD_ERROR) : REQUIRED_ERROR;
-    const confirm_password = this.state.confirm_password && this.state.confirm_password.length > 0 ? (this.state.confirm_password !== this.state.password ? NOT_MATCHING_PASSWORDS_ERROR : '') : REQUIRED_ERROR;
-    const first_name = this.state.first_name && this.state.first_name.length > 0 ? (validateOnlyLetters(this.state.first_name) ? '': ONLY_LETTERS_ERROR) : REQUIRED_ERROR;
-    const last_name = this.state.last_name && this.state.last_name.length > 0 ? (validateOnlyLetters(this.state.last_name) ? '' : ONLY_LETTERS_ERROR) : REQUIRED_ERROR;;
-    this.setState({ formErrors: {email, password, confirm_password, first_name, last_name} }, callback);
+    const confirmPassword = this.state.confirmPassword && this.state.confirmPassword.length > 0 ? (this.state.confirmPassword !== this.state.password ? NOT_MATCHING_PASSWORDS_ERROR : '') : REQUIRED_ERROR;
+    const firstName = this.state.firstName && this.state.firstName.length > 0 ? (validateOnlyLetters(this.state.firstName) ? '': ONLY_LETTERS_ERROR) : REQUIRED_ERROR;
+    const lastName = this.state.lastName && this.state.lastName.length > 0 ? (validateOnlyLetters(this.state.lastName) ? '' : ONLY_LETTERS_ERROR) : REQUIRED_ERROR;;
+    this.setState({ formErrors: {email, password, confirmPassword, firstName, lastName} }, callback);
   }
 
   isValidForm = () => {
-    const email = this.state.formErrors.email;
-    const password = this.state.formErrors.password;
-    const confirm_password = this.state.formErrors.confirm_password;
-    const first_name = this.state.formErrors.first_name;
-    const last_name = this.state.formErrors.last_name;
+    const { email, password, confirmPassword, firstName, lastName } = this.state.formErrors;
+
     return (
       !(email && email.length > 0) &&
       !(password && password.length > 0) &&
-      !(confirm_password && confirm_password.length > 0) &&
-      !(first_name && first_name.length > 0) &&
-      !(last_name && last_name.length > 0)
+      !(confirmPassword && confirmPassword.length > 0) &&
+      !(firstName && firstName.length > 0) &&
+      !(lastName && lastName.length > 0)
     );
   }
 
   render() {
-    const { from } = this.props.location.state || { from: { pathname: '/' } }
+    const { from } = this.props.location.state || { from: { pathname: routes.dashboard() } }
 
     if (this.props.access_token.length > 0) {
       return (
@@ -70,12 +66,10 @@ class SignupContainer extends Component {
     }
 
     return (
-      <div>
-        <Signup
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
-          formErrors={this.state.formErrors}/>
-      </div>
+      <Signup
+        handleChange={this.handleChange}
+        handleSubmit={this.handleSubmit}
+        formErrors={this.state.formErrors}/>
     )
   }
 }

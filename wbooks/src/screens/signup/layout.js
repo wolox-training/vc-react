@@ -11,9 +11,9 @@ class Signup extends Component {
   render() {
     const emailError = this.props.formErrors.email && this.props.formErrors.email.length > 0 ? this.props.formErrors.email : '';
     const passwordError = this.props.formErrors.password && this.props.formErrors.password.length > 0 ? this.props.formErrors.password : '';
-    const confirmPasswordError = this.props.formErrors.confirm_password && this.props.formErrors.confirm_password.length > 0 ? this.props.formErrors.confirm_password : '';
-    const nameError = this.props.formErrors.first_name && this.props.formErrors.first_name.length > 0 ? this.props.formErrors.first_name : '';
-    const lastNameError = this.props.formErrors.last_name && this.props.formErrors.last_name.length > 0 ? this.props.formErrors.last_name : '';
+    const confirmPasswordError = this.props.formErrors.confirmPassword && this.props.formErrors.confirmPassword.length > 0 ? this.props.formErrors.confirmPassword : '';
+    const nameError = this.props.formErrors.firstName && this.props.formErrors.firstName.length > 0 ? this.props.formErrors.firstName : '';
+    const lastNameError = this.props.formErrors.lastName && this.props.formErrors.lastName.length > 0 ? this.props.formErrors.lastName : '';
     return (
       <div className={styles.container}>
         <img className={styles.logo} alt="logo" src={wlogo}/>
@@ -45,30 +45,30 @@ class Signup extends Component {
               <label className={styles.label} htmlFor='confirmPassword'>{CONFIRM_PASSWORD}</label>
               <input
                 className={styles.input}
-                id='confirm_password'
-                name='confirm_password'
+                id='confirmPassword'
+                name='confirmPassword'
                 type='password'
                 onChange={this.props.handleChange}
               />
               <p className={styles.error}>{confirmPasswordError}</p>
             </div>
             <div className={styles.formGroup}>
-              <label className={styles.label} htmlFor='first_name'>{NAME}</label>
+              <label className={styles.label} htmlFor='firstName'>{NAME}</label>
               <input
                 className={styles.input}
-                id='first_name'
-                name='first_name'
+                id='firstName'
+                name='firstName'
                 type='text'
                 onChange={this.props.handleChange}
               />
               <p className={styles.error}>{nameError}</p>
             </div>
             <div className={styles.formGroup}>
-              <label className={styles.label} htmlFor='last_name'>{LAST_NAME}</label>
+              <label className={styles.label} htmlFor='lastName'>{LAST_NAME}</label>
               <input
                 className={styles.input}
-                id='last_name'
-                name='last_name'
+                id='lastName'
+                name='lastName'
                 type='text'
                 onChange={this.props.handleChange}
               />
@@ -89,9 +89,9 @@ Signup.propTypes = {
   formErrors: PropTypes.shape({
     email: PropTypes.string,
     password: PropTypes.string,
-    confirm_password: PropTypes.string,
-    first_name: PropTypes.string,
-    last_name: PropTypes.string
+    confirmPassword: PropTypes.string,
+    firstName: PropTypes.string,
+    lastName: PropTypes.string
   }).isRequired
 }
 

@@ -3,8 +3,10 @@ export const validateEmail = email => {
 }
 
 export const validatePassword = password => {
-  return password.length > 7 && password.length < 53;
-  // && (password.search(/\d/) !== -1 && password.search(/[a-zA-Z]/) !== -1);
+  return (
+    password.length > 7 && password.length < 53 &&
+    (password.search(/\d/) !== -1 && password.search(/[a-zA-Z]/) !== -1)
+  );
 }
 
 export const validateOnlyLetters = field => {

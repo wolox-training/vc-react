@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { DESCRIPTION, RENT } from './strings';
 import styles from './styles.scss';
-import ImageContainer from '../image/index';
+import ImageContainer from '../Image';
 
 class BookData extends Component {
   render() {

@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import { SELECT_FILTER, TITLE, AUTHOR, SEARCH } from './strings';
 import styles from './styles.scss';
-import BookCard from '../../components/bookCard/index';
+import BookCard from '../../components/BookCard';
 import SearchImage from '../../images/search.svg';
 
 class Home extends Component {

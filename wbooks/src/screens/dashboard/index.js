@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';import { Redirect, Route, Switch } from 'react-router-dom';
 
-import HeaderContainer from '../../components/header/index';
-import HomeContainer from '../home/index';
-import BookDetailContainer from '../bookDetail/index';
+import HeaderContainer from '../../components/Header';
+import HomeContainer from '../Home';
+import BookDetailContainer from '../BookDetail';
 import routes from '../../config/routes';
 
 class DashboardContainer extends Component {

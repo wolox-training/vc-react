@@ -6,6 +6,7 @@ import { REQUIRED_ERROR, EMAIL_ERROR, PASSWORD_ERROR } from './strings';
 import { validateEmail, validatePassword } from '../../utils/Validator';
 import { connect } from 'react-redux';
 import { actionCreators } from '../../redux/auth/actions';
+import routes from '../../config';
 
 class LoginContainer extends Component {
   state = {
@@ -13,9 +14,7 @@ class LoginContainer extends Component {
   }
 
   handleChange = (e) => {
-    var change = {}
-    change[e.target.name] = e.target.value
-    this.setState(change)
+    this.setState({ [e.target.name]: e.target.value });
   }
 
   handleSubmit = (e) => {
@@ -42,7 +41,8 @@ class LoginContainer extends Component {
   }
 
   render() {
-    const { from } = this.props.location.state || { from: { pathname: '/' } }
+
+    const { from } = this.props.location.state || { from: { pathname: routes.dashboard() } }
 
     if (this.props.access_token.length > 0) {
       return (
@@ -51,12 +51,10 @@ class LoginContainer extends Component {
     }
 
     return (
-      <div>
-        <Login
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
-          formErrors={this.state.formErrors}/>
-      </div>
+      <Login
+        handleChange={this.handleChange}
+        handleSubmit={this.handleSubmit}
+        formErrors={this.state.formErrors}/>
     )
   }
 }

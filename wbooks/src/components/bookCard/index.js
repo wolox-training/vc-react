@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import styles from './styles.scss';
-import ImageContainer from '../image/index';
+import ImageContainer from '../Image';
 import routes from '../../config/routes';
 
 class BookCard extends Component {

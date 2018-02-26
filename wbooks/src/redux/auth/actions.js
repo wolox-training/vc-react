@@ -33,7 +33,7 @@ export const actionCreators =  {
       dispatch({ type: SIGNUP });
       const response = await AuthService.signup(email, password, confirmPassword, firstName, lastName)
       if(!response.ok) {
-        dispatch({ type: LOGIN_ERROR });
+        dispatch({ type: SIGNUP_ERROR });
         return;
       }
       AuthService.setAuthHeader(response.data.access_token);

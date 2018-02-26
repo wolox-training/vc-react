@@ -5,10 +5,10 @@ import PropTypes from 'prop-types';
 import { GO_BACK } from './strings';
 import styles from './styles.scss';
 import routes from '../../config/routes';
-import BookData from '../../components/bookData/index';
-import BookSuggestions from '../../components/bookSuggestions/index';
-import Separator from '../../components/separator/index';
-import BookComments from '../../components/bookComments/index';
+import BookData from '../../components/BookData';
+import BookSuggestions from '../../components/BookSuggestions';
+import Separator from '../../components/Separator';
+import BookComments from '../../components/BookComments';
 
 class BookDetail extends Component {
   render() {

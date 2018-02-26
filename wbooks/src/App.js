@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import { Switch } from 'react-router-dom';
 
-import DashboardContainer from './screens/dashboard/index';
-import LoginContainer from './screens/login/index';
-import SignupContainer from './screens/signup/index';
+import DashboardContainer from './screens/Dashboard';
+import LoginContainer from './screens/Login';
+import SignupContainer from './screens/Signup';
 import routes from './config/routes';
 import Authenticated from './utils/PrivateRoute';
 

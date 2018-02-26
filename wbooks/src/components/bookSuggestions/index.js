@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { SUGGESTIONS } from './strings';
 import styles from './styles.scss';
-import ImageContainer from '../image/index';
+import ImageContainer from '../Image';
 
 class BookSuggestions extends Component {
   render() {

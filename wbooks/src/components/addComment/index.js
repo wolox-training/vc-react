@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { ADD_COMMENT, SEND, PROFILE } from './strings';
 import styles from './styles.scss';
-import perfilExample from '../../images/perfilexample.jpg';
+import PerfilExample from '../../images/perfilexample.jpg';
 
 class AddComment extends Component {
   render() {
@@ -11,7 +11,7 @@ class AddComment extends Component {
         <img
           className={styles.image}
           alt = {PROFILE}
-          src = {perfilExample}
+          src = {PerfilExample}
         />
         <div className={styles.addCommentContainer}>
           <h2 className={styles.title}> {ADD_COMMENT} </h2>
