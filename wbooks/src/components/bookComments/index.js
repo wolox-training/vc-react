@@ -1,22 +1,22 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 import { COMMENTS } from './strings';
 import styles from './styles.scss';
-import AddCommentContainer from '../add-comment/index';
-import CommentListContainer from '../comment-list/index';
+import AddCommentContainer from '../addComment/index';
+import CommentListContainer from '../commentList/index';
 
-class BookCommentsContainer extends Component {
+class BookComments extends Component {
   render() {
     return (
-      <div>
+      <Fragment>
         <h2 className={styles.title}> {COMMENTS} </h2>
         <div className={styles.commentsContainer}>
           <AddCommentContainer />
           <CommentListContainer />
         </div>
-      </div>
+      </Fragment>
     );
   }
 }
 
-export default BookCommentsContainer;
+export default BookComments;

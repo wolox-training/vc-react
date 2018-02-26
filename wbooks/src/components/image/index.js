@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import styles from './styles.scss';
 import defaultBook from '../../images/default_book.svg';
 
-class ImageContainer extends Component {
+class Image extends Component {
   render() {
     if (this.props.image_url) {
       return (
@@ -29,10 +29,10 @@ class ImageContainer extends Component {
   }
 }
 
-ImageContainer.propTypes = {
+Image.propTypes = {
   bookId: PropTypes.number.isRequired,
   image_url: PropTypes.string,
   image_size: PropTypes.string.isRequired
 };
 
-export default ImageContainer;
+export default Image;

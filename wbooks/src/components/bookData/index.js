@@ -5,7 +5,7 @@ import { DESCRIPTION, RENT } from './strings';
 import styles from './styles.scss';
 import ImageContainer from '../image/index';
 
-class BookDataContainer extends Component {
+class BookData extends Component {
   render() {
     return (
       <div className={styles.bookDataContainer}>
@@ -27,7 +27,7 @@ class BookDataContainer extends Component {
   }
 }
 
-BookDataContainer.propType = {
+BookData.propType = {
   book: PropTypes.shape({
     id: PropTypes.number.isRequired,
     author: PropTypes.string.isRequired,
@@ -39,4 +39,4 @@ BookDataContainer.propType = {
   }).isRequired
 };
 
-export default BookDataContainer;
+export default BookData;

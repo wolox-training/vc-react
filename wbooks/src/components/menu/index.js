@@ -6,7 +6,7 @@ import addBook from '../../images/add_book.svg';
 import notifications from '../../images/notifications.svg';
 import perfilExample from '../../images/perfilexample.jpg';
 
-class MenuContainer extends Component {
+class Menu extends Component {
   render() {
     return (
       <div className={styles.menu}>
@@ -30,4 +30,4 @@ class MenuContainer extends Component {
   }
 }
 
-export default MenuContainer;
+export default Menu;

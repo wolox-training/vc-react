@@ -4,7 +4,7 @@ import { SUGGESTIONS } from './strings';
 import styles from './styles.scss';
 import ImageContainer from '../image/index';
 
-class BookSuggestionsContainer extends Component {
+class BookSuggestions extends Component {
   render() {
     return (
       <div>
@@ -20,4 +20,4 @@ class BookSuggestionsContainer extends Component {
   }
 }
 
-export default BookSuggestionsContainer;
+export default BookSuggestions;

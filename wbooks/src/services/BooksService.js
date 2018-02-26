@@ -1,9 +1,9 @@
 
 import api from '../config/api';
 
-const getBook = id => api.get(`/books/${id}`);
+const getBook = async id => api.get(`/books/${id}`);
 
-const getBooks = params => api.get('/books');
+const getBooks = async params => api.get('/books');
 
 const BooksService = {
   getBook,

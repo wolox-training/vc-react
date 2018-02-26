@@ -6,7 +6,7 @@ import styles from './styles.scss';
 import ImageContainer from '../image/index';
 import routes from '../../config/routes';
 
-class BookCardContainer extends Component {
+class BookCard extends Component {
   render() {
     return (
       <Link to={routes.books(this.props.book.id)}>
@@ -20,7 +20,7 @@ class BookCardContainer extends Component {
   }
 }
 
-BookCardContainer.propTypes = {
+BookCard.propTypes = {
   book: PropTypes.shape({
     id: PropTypes.number.isRequired,
     author: PropTypes.string.isRequired,
@@ -32,4 +32,4 @@ BookCardContainer.propTypes = {
   }).isRequired
 };
 
-export default BookCardContainer;
+export default BookCard;

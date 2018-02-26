@@ -15,25 +15,23 @@ export const actionCreators = {
   getBook(id) {
     return async dispatch => {
       dispatch({ type: GET_BOOK });
-      BooksService.getBook(id)
-        .then(response => {
-          dispatch({ type: GET_BOOK_SUCCESS, payload: { book: response.data } });
-        })
-        .catch(() => {
-          dispatch({ type: GET_BOOK_ERROR });
-        });
+      const response = await BooksService.getBook(id);
+      if(response.ok) {
+        dispatch({ type: GET_BOOK_SUCCESS, payload: { book: response.data } });
+      } else {
+        dispatch({ type: GET_BOOK_ERROR });
+      }
     };
   },
   getBooks() {
     return async dispatch => {
       dispatch({ type: GET_BOOKS });
-      BooksService.getBooks()
-        .then(response => {
-          dispatch({ type: GET_BOOKS_SUCCESS, payload: { books: response.data } });
-        })
-        .catch(() => {
-          dispatch({ type: GET_BOOKS_ERROR });
-        });
+      const response = await BooksService.getBooks();
+      if(response.ok) {
+        dispatch({ type: GET_BOOKS_SUCCESS, payload: { books: response.data } });
+      } else {
+        dispatch({ type: GET_BOOKS_ERROR });
+      }
     };
   },
   changeFilters(filters) {

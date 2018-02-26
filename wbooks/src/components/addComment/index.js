@@ -4,7 +4,7 @@ import { ADD_COMMENT, SEND, PROFILE } from './strings';
 import styles from './styles.scss';
 import perfilExample from '../../images/perfilexample.jpg';
 
-class AddCommentContainer extends Component {
+class AddComment extends Component {
   render() {
     return (
       <div className={styles.container}>
@@ -23,4 +23,4 @@ class AddCommentContainer extends Component {
   }
 }
 
-export default AddCommentContainer;
+export default AddComment;

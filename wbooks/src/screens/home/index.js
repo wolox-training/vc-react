@@ -45,14 +45,17 @@ class HomeContainer extends Component {
   }
 
   render() {
+    if(this.props.books) {
     return (
-      <Home
-        items={this.filterItems(this.props.books)}
-        handleSubmit={this.handleSubmit}
-        handleDataChange={this.handleDataChange}
-        handleTypeChange={this.handleTypeChange}
-      />
-    );
+        <Home
+          items={this.filterItems(this.props.books)}
+          handleSubmit={this.handleSubmit}
+          handleDataChange={this.handleDataChange}
+          handleTypeChange={this.handleTypeChange}
+        />
+      );
+    }
+    return null;
   }
 }
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import styles from './styles.scss';
 
-class SeparatorContainer extends Component {
+class Separator extends Component {
   render() {
     return (
       <div className={styles.separator} />
@@ -10,4 +10,4 @@ class SeparatorContainer extends Component {
   }
 }
 
-export default SeparatorContainer;
+export default Separator;

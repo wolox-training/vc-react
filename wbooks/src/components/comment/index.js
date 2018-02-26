@@ -4,7 +4,7 @@ import { COMMENT, DATE, NAME, PROFILE} from './strings';
 import styles from './styles.scss';
 import perfilExample from '../../images/perfilexample.jpg';
 
-class CommentContainer extends Component {
+class Comment extends Component {
   render() {
     return (
       <div className={styles.container}>
@@ -23,4 +23,4 @@ class CommentContainer extends Component {
   }
 }
 
-export default CommentContainer;
+export default Comment;
