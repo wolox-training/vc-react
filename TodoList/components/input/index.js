@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { gray } from '../../utils/colors';
 import { styles } from './styles';
 
-export default class Input extends Component {
+class Input extends Component {
   render() {
     return (
       <TextInput
@@ -22,3 +22,5 @@ Input.propTypes = {
   placeholder: PropTypes.string,
   handleChange: PropTypes.func.isRequired
 }
+
+export default Input;

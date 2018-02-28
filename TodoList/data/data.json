@@ -1,21 +1,17 @@
 [
   {
-    "id": 1,
     "name": "Check email",
     "status": "incomplete"
   },
   {
-    "id": 2,
     "name": "Take a shower",
     "status": "complete"
   },
   {
-    "id": 3,
     "name": "Brush teeth",
     "status": "complete"
   },
   {
-    "id": 4,
     "name": "Eat breakfast",
     "status": "incomplete"
   }

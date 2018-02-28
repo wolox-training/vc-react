@@ -12,6 +12,7 @@ import Navigator from './screens';
 
 type Props = {};
 const store = configureStore();
+
 export default class App extends Component<Props> {
   render() {
     return (

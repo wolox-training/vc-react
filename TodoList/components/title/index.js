@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import { styles } from './styles';
 
-export default class Title extends Component {
+class Title extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -19,4 +19,6 @@ export default class Title extends Component {
 Title.propTypes = {
   text: PropTypes.string.isRequired
 }
+
+export default Title;
 

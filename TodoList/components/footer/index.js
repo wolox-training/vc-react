@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import { styles } from './styles';
 
-export default class Footer extends Component {
+class Footer extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -17,3 +17,5 @@ export default class Footer extends Component {
 Footer.propTypes = {
   text: PropTypes.string.isRequired
 }
+
+export default Footer;

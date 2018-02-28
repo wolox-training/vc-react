@@ -9,7 +9,7 @@ import TodoList from '../../components/TodoList';
 
 import { styles } from './styles';
 
-export default class Todo extends Component {
+class Todo extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -51,3 +51,5 @@ Todo.propTypes = {
     })
   )
 }
+
+export default Todo;

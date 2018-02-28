@@ -5,13 +5,13 @@ export const NavigationOptions = {
     header: null
   }),
   todo: () => ({
-    tabBarLabel: 'todo'.toUpperCase()
+    header: null
   }),
   books: () => ({
-    tabBarLabel: 'books'.toUpperCase()
-  }),
-  bookDetail: () => ({
     header: null
+  }),
+  bookDetail: (title) => ({
+    tabBarLabel: title
   })
 };
 

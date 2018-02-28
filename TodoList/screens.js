@@ -6,23 +6,25 @@ import { TabNavigator, StackNavigator } from 'react-navigation';
 import * as Routes from './utils/routes';
 import TodoViewContainer from './screens/Todo';
 import BooksViewContainer from './screens/Books';
+import BooksDetailViewContainer from './screens/BookDetail';
 
 import {
   NavigationOptions,
   TabNavigatorOptions
 } from './navigation/navigationOptions';
 
-const HomeTabNavigatorScreen = TabNavigator(
+
+const BooksNavigatorScreen = TabNavigator(
   {
-    [Routes.Todo]: { screen: TodoViewContainer, navigationOptions: NavigationOptions.todo() },
-    [Routes.Books]: { screen: BooksViewContainer, navigationOptions: NavigationOptions.books() }
-  },
+    Todo: { screen: TodoViewContainer, navigationOptions: NavigationOptions.todo() },
+    Books: { screen: BooksViewContainer, navigationOptions: NavigationOptions.books() }
+  }, 
   TabNavigatorOptions
 );
 
-export default StackNavigator({
-  Home: {
-    screen: HomeTabNavigatorScreen,
-    navigationOptions: NavigationOptions.home()
+export default StackNavigator(
+  {
+    Home: { screen: BooksNavigatorScreen, navigationOptions: NavigationOptions.books() },
+    BookDetail: { screen: BooksDetailViewContainer, navigationOptions: NavigationOptions.bookDetail() }
   }
-});
+);

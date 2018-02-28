@@ -1,0 +1,10 @@
+import { create } from 'apisauce';
+
+const api = create({
+  baseURL: 'https://wbooks-api-stage.herokuapp.com/api/v1',
+  timeout: 5000
+});
+
+api.setHeader('Authorization', "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNCwidmVyaWZpY2F0aW9uX2NvZGUiOiJxUHg5RHhUa0J6S2IyY0NLZWd5eUh2TlRrZWZQazluMTd5dlVVZjNpZHo3RGJ0Y0ZZc0Y3WVM4ekMxdVdEQXpqIiwicmVuZXdfaWQiOiJtWllDdWt6WlRXRkxDU3k0c2FweEdQdkZ3U2tNMlNOc1BQdThDVUFTYVdlZnNqeHltaXpxdWItdTRqUHpyLTFWIiwibWF4aW11bV91c2VmdWxfZGF0ZSI6MTUyMjQyNzY2NSwiZXhwaXJhdGlvbl9kYXRlIjoxNTIwMDA4NDY1LCJ3YXJuaW5nX2V4cGlyYXRpb25fZGF0ZSI6MTUxOTg1MzY2NX0.F5NxtvdKVVEPoWnNZVPHTQnSQmeRTBuIyVRnNYqivcc");
+
+export default api;
