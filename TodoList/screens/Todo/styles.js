@@ -1,10 +1,16 @@
 import { StyleSheet } from 'react-native';
-import { lightGray } from '../../consts/colors';
+import { lightGray, blue } from '../../utils/colors';
 
 export const styles = StyleSheet.create({
+  container: {
+    justifyContent: 'center',
+    height: '100%'
+  },
+  content: {
+    flexGrow: 1,
+  },
   inputContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     borderBottomWidth: 1,
     borderBottomColor: lightGray
   }

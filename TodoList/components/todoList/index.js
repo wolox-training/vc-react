@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Button, FlatList, Text, View, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 
-import CheckBox from '../checkbox/index';
+import CheckBox from '../Checkbox';
 import { styles } from './styles';
-import { red } from '../../consts/colors';
+import { red } from '../../utils/colors';
 
 const extractKey = ({name}) => name
 

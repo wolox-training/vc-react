@@ -3,13 +3,8 @@ import { StyleSheet } from 'react-native';
 import { blue, white } from '../../utils/colors.js';
 
 export const styles = StyleSheet.create({
-  container: {
-    backgroundColor: blue,
-    marginTop: 20,
-    padding: 5
-  },
-  text: {
-    color: white,
-    textAlign: 'center'
+  input: {
+    flexGrow: 1,
+    padding: 4
   }
 })

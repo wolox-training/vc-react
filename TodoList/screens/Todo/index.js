@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import Home from './layout';
+import Todo from './layout';
 import { actionCreators } from '../../redux/todo/actions';
 
-class HomeContainer extends Component {
+class TodoViewContainer extends Component {
 
   state = {itemName: '' }
 
@@ -32,7 +32,7 @@ class HomeContainer extends Component {
 
   render() {
     return (
-      <Home 
+      <Todo 
         items={this.props.items}
         handleChange={this.handleChange}
         handleRemove={this.handleRemove}
@@ -51,4 +51,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(HomeContainer);
+export default connect(mapStateToProps)(TodoViewContainer);

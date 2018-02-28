@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { lightGray } from '../../consts/colors';
+import { lightGray } from '../../utils/colors';
 
 export const styles = StyleSheet.create({
   container: {
